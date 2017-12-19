@@ -15,8 +15,14 @@ class MyClass(GeneratedClass):
         pass
 
     def onInput_onStart(self):       
-        self.posture.goToPosture("Sit",1.0)            
+        # If Nao is not sitting ,Nao will sit down.
+        if self.posture.getPosture() != "Sit":        
+            self.posture.goToPosture("Sit",1.0)     
+
+        # Wait 1 minutes
         time.sleep(1)        
+
+        #StanUp
         self.posture.post.goToPosture("Stand",1.0)      
         pass
 
