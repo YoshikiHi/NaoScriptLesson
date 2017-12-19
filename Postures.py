@@ -14,15 +14,10 @@ class MyClass(GeneratedClass):
         #put clean-up code here
         pass
 
-    def onInput_onStart(self):
-        # applyPosture is Blocking Call.
-        # goToPosture is NonBlocking Call.
-        self.posture.post.applyPosture("Sit",1.0)
-
-        # Wait 1s
-        time.sleep(1)
-        
-        self.posture.post.applyPosture("Stand",1.0) 
+    def onInput_onStart(self):       
+        self.posture.goToPosture("Sit",1.0)            
+        time.sleep(1)        
+        self.posture.post.goToPosture("Stand",1.0)      
         pass
 
     def onInput_onStop(self):
