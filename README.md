@@ -6,10 +6,12 @@ These Python scripts for running on "**Choregraphe PythonBox**".
 **Please Check your local environment and change IP Address , Port Number**<br>
 ※ IP Address is **string** / Port Number is **Number**<br>
 =============================================<br>
-def __init__(self):<br>
+<code>
+def \_\_init\_\_(self):<br>
 　  ...<br>
 　  ALProxy("〜〜〜","***RobotIPAddr***",***RobotPort***)<br>
 　  ...<br>
+</code>
 =============================================<br>
 
 The following is a description of the file.
