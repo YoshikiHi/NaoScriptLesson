@@ -1,6 +1,7 @@
 class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
+        #ALProxy("API Name","RobotIPAddr",RobotPort)
         self.speak = ALProxy("ALTextToSpeech","localhost",56678)
 
     def onLoad(self):
