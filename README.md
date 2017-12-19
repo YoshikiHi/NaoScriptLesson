@@ -32,11 +32,11 @@ The following is a description of the file.
 
 # Supplement
 ## Install Choregraphe
-Please refer to the following,how to install Choregraphe.
+Please refer to the following,how to install Choregraphe.<br>
 https://www.softbank.jp/robot/consumer/support/trouble/data/choregraphe/
 
 ## API Information
-Please check the APIs and functions you want to use from the following.
+Please check the APIs and functions you want to use from the following.<br>
 http://doc.aldebaran.com/2-1/naoqi/index.html
 
 
