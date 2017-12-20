@@ -1,8 +1,9 @@
+import time
 class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
         #ALProxy("API Name","RobotIPAddr",RobotPort)
-        self.motionProxy = ALProxy("ALMotion","localhost",56678)
+        self.motionProxy = ALProxy("ALMotion","localhost",49408)
 
     def onLoad(self):
         #put initialization code here
@@ -16,11 +17,21 @@ class MyClass(GeneratedClass):
         # Setting wakeup mode
         self.motionProxy.wakeUp()       
 
-        # Adjustment of right arm position
+        # Adjustment of right arm position(Up)
         self.motionProxy.post.setAngles(["RShoulderPitch","RShoulderRoll"],[0.5,0.0],0.1)     
 
         # OpenHand
-        self.motionProxy.post.openHand("RHand")   
+        self.motionProxy.post.openHand("RHand")
+
+        time.sleep(5)
+        
+        # Adjustment of right arm position(Down)
+        self.motionProxy.post.setAngles(["RShoulderPitch","RShoulderRoll"],[1.5,0.0],0.1)     
+
+        # CloseHand
+        self.motionProxy.post.closeHand("RHand")
+        
+          
         pass
 
     def onInput_onStop(self):
