@@ -4,6 +4,7 @@ class MyClass(GeneratedClass):
         GeneratedClass.__init__(self)
         #ALProxy("API Name","RobotIPAddr",RobotPort)
         self.motionProxy = ALProxy("ALMotion","localhost",49408)
+        self.speechProxy = ALProxy("ALTextToSpeech","localhost",49408)
 
     def onLoad(self):
         #put initialization code here
@@ -18,20 +19,21 @@ class MyClass(GeneratedClass):
         self.motionProxy.wakeUp()       
 
         # Adjustment of right arm position(Up)
-        self.motionProxy.post.setAngles(["RShoulderPitch","RShoulderRoll"],[0.5,0.0],0.1)     
+        self.motionProxy.setAngles(["RShoulderPitch","RShoulderRoll"],[0.5,0.0],0.1)     
 
         # OpenHand
-        self.motionProxy.post.openHand("RHand")
+        self.motionProxy.openHand("RHand")
 
-        time.sleep(5)
+        time.sleep(3)
         
         # Adjustment of right arm position(Down)
-        self.motionProxy.post.setAngles(["RShoulderPitch","RShoulderRoll"],[1.5,0.0],0.1)     
+        self.motionProxy.setAngles(["RShoulderPitch","RShoulderRoll"],[1.5,0.0],0.1)     
 
         # CloseHand
-        self.motionProxy.post.closeHand("RHand")
+        self.motionProxy.closeHand("RHand")
         
-          
+        self.speechProxy.say("Thank you！")
+                  
         pass
 
     def onInput_onStop(self):
