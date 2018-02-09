@@ -1,10 +1,15 @@
 import time
+
+# change your environment
+ip_addr = "localhost"
+port_num = "49408"
+
 class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
         #ALProxy("API Name","RobotIPAddr",RobotPort)
-        self.motionProxy = ALProxy("ALMotion","localhost",49408)
-        self.speechProxy = ALProxy("ALTextToSpeech","localhost",49408)
+        self.motionProxy = ALProxy("ALMotion",ip_addr,port_num)
+        self.speechProxy = ALProxy("ALTextToSpeech",ip_addr,port_num)
 
     def onLoad(self):
         #put initialization code here
