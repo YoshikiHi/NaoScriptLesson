@@ -2,7 +2,7 @@ import time
 
 # change your environment
 ip_addr = "localhost"
-port_num = "49408"
+port_num = 49408
 
 class MyClass(GeneratedClass):
     def __init__(self):
